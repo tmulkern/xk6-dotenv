@@ -43,7 +43,7 @@ func New() *Module {
 	return &Module{}
 }
 
-func (m *Module) Parse(ctx context.Context, text string) (interface{}, error) {
+func (m *Module) Parse(text string) (interface{}, error) {
 	obj, err := godotenv.Unmarshal(text)
 	if err != nil {
 		return nil, err
@@ -52,7 +52,7 @@ func (m *Module) Parse(ctx context.Context, text string) (interface{}, error) {
 	return obj, nil
 }
 
-func (m *Module) Stringify(ctx context.Context, value map[string]string) (string, error) {
+func (m *Module) Stringify(value map[string]string) (string, error) {
 	str, err := godotenv.Marshal(value)
 	if err != nil {
 		return "", err
