@@ -23,7 +23,6 @@
 package dotenv
 
 import (
-	"context"
 	"os"
 
 	"github.com/joho/godotenv"
